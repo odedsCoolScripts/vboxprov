@@ -1,20 +1,16 @@
 # vboxprov
-Provisioning VirtualBox with given .ova files
-
-# Project Title
-
-Simple overview of use/purpose.
+Provisioning VirtualBox with given .ova files and send ssh commands
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+In this project we're also demonstrate how to run docker-compose to the created machines with Grafite, Grafana and Promitues
 
 ## Getting Started
 
 ### Dependencies
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
+* VBox host installed on a local machine 
+* Internet access from VBox host
 
 ### Installing
 
