@@ -64,6 +64,9 @@ HOSTNAME=$(hostname) docker stack deploy -c ~/prometheus/docker-stack.yml prom >
 ```
 Grafana url will be (local VirtualBox host): http://127.0.0.1:10222 .Port consisted of number 10 and last 3 digits of the provided port for ssh.
 Default user: admin. password: foobar
+Default Dashboard:
+![Host matrics](https://raw.githubusercontent.com/odedsCoolScripts/vboxprov/master/Screen%20Shot%202019-09-23%20at%200.22.19.png)
+![Container Matrics](https://raw.githubusercontent.com/odedsCoolScripts/vboxprov/master/Screen%20Shot%202019-09-23%20at%200.22.32.png)
 
 ## Limitations
 
