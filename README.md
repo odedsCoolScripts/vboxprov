@@ -62,12 +62,14 @@ echo 'composing containers:'
 HOSTNAME=$(hostname) docker stack deploy -c ~/prometheus/docker-stack.yml prom > ~/prometheus/compose.log 2>&1
 
 ```
+Grafana url will be: http://127.0.0.1:10222 (number 10 and last 3 digits of the provided port for ssh).
+Default user: admin. password: foobar
 
 ## Limitations
 
-* port argument in the first script must be 4 digits starting from the first machine.
+* port argument in the first script must be 4 digits starting from the first machine port number.
 * Graphite data source and container is not provided in this project. we'll add it in next version.
-* The current .ovh file image provided here doesn't authenticate with the ssh key file installed and configured in /etc/ssh/sshd_config and in authorized_keys. Need to investigate that, will appear in next version. 
+* The current .ovh file image provided here doesn't authenticate with the ssh key file installed and configured in /etc/ssh/sshd_config and in authorized_keys. Need to investigate that, will appear in next version.
 
 
 ## Acknowledgments
