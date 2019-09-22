@@ -9,18 +9,23 @@ In this project we're also demonstrate how to run docker-compose to the created 
 
 ### Dependencies
 
-* VBox host installed on a local machine 
-* Internet access from VBox host
+* VirtualBox host installed on a local machine (Can be modified to remote host)
+* Internet access from VBox host to Github, AWS S3 (for .ovh file), Docker hub and ubuntu apt-get- ubuntu repo.  
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* Clone the project to your working directory on local machine
+* Install the matching ssh key for the machine .ovh file on your the VirtualBox host's ~/.ssh folder. The key will be provided  by private request).
 
-### Executing program
+### Getting started
 
-* How to run the program
-* Step-by-step bullets
+* This project consisted of 3 scripts chain reaction, started by `VBoxStartFromImage.sh`.
+* The first script- `VBoxStartFromImage.sh` should Provision machines from argument .ova file (exported VBox machine image), local or by http link. The script is iteratable. 
+* The second script- `install_app.sh` is called at the end of `VBoxStartFromImage.sh` and should copy files and install scripts on the created VM.
+* The third and last script- `docker-compose-up.sh` is copied to the VM and in our case will install docker stack with predefined Grafana, Promethues and NodeExporter, to observe graphs for CPU and Memory usage on the machine  
+
+#### FIrst script- `VBoxStartFromImage.sh`
+will receive 
 ```
 code blocks for commands
 ```
