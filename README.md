@@ -1,4 +1,4 @@
-# vboxprov
+# Virtual Box Provisioning and Install
 Provisioning VirtualBox with given .ova files and send ssh commands
 
 ## Description
@@ -24,10 +24,22 @@ In this project we're also demonstrate how to run docker-compose to the created 
 * The second script- `install_app.sh` is called at the end of `VBoxStartFromImage.sh` and should copy files and install scripts on the created VM.
 * The third and last script- `docker-compose-up.sh` is copied to the VM and in our case will install docker stack with predefined Grafana, Promethues and NodeExporter, to observe graphs for CPU and Memory usage on the machine  
 
-#### FIrst script- `VBoxStartFromImage.sh`
-will receive 
+#### FIrst script- VBoxStartFromImage.sh
+will receive the the arguments: 
+VM name, path to .ovh file (either local or http), unique port to ssh the VM (default: 2222), VM machine's Username (ubuntu in our case).
+Example:
 ```
-code blocks for commands
+./VBoxStartFromImage.sh ubuntu_14 https://virtual-box-oded.s3.eu-central-1.amazonaws.com/base_ubuntu_14_with_docker_compose.ova 2222 ubuntu
+```
+If the path to .ovh file is http, we'll download it by curl, unless it's already downloaded.
+If the path to .ovh is local, it will be copied to the working directory, unless it's already there.  
+
+Iterating the script:
+```
+ovh_file="https://virtual-box-oded.s3.eu-central-1.amazonaws.com/base_ubuntu_14_with_docker_compose.ova"
+./VBoxStartFromImage.sh ubuntu_14 "$ovh_file" 2222 ubuntu
+./VBoxStartFromImage.sh ubuntu_14_1 "$ovh_file" 2223 ubuntu
+./VBoxStartFromImage.sh ubuntu_14_2 "$ovh_file" 2224 ubuntu
 ```
 
 ## Help
