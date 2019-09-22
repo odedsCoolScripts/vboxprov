@@ -62,7 +62,7 @@ echo 'composing containers:'
 HOSTNAME=$(hostname) docker stack deploy -c ~/prometheus/docker-stack.yml prom > ~/prometheus/compose.log 2>&1
 
 ```
-Grafana url will be: http://127.0.0.1:10222 (number 10 and last 3 digits of the provided port for ssh).
+Grafana url will be (local VirtualBox host): http://127.0.0.1:10222 .Port consisted of number 10 and last 3 digits of the provided port for ssh.
 Default user: admin. password: foobar
 
 ## Limitations
