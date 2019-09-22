@@ -41,7 +41,7 @@ ovh_file="https://virtual-box-oded.s3.eu-central-1.amazonaws.com/base_ubuntu_14_
 ./VBoxStartFromImage.sh ubuntu_14_1 "$ovh_file" 2223 ubuntu
 ./VBoxStartFromImage.sh ubuntu_14_2 "$ovh_file" 2224 ubuntu
 ```
-Note: This script should not be modified unless some there are crucial requirment to the change the VMs settings before it starts. See lines: 32-36.
+Note: This script should not be modified unless some there are crucial requirment to the change the VMs settings before it starts. See lines: 32-36 (port fwd and host IP).
 
 #### Second script- install_app.sh
 This script receives the VM's ssh port and its user name when it's called by VBoxStartFromImage.sh.
@@ -63,9 +63,9 @@ HOSTNAME=$(hostname) docker stack deploy -c ~/prometheus/docker-stack.yml prom >
 
 ```
 
-## Help
+## Limitations
 
-Any advise for common problems or issues.
+* port argument in the first sctipt must be 4 digits starting from the first machine.
 ```
 command to run if program contains helper info
 ```
